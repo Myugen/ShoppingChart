@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head lang="es">
+        <script type="tex/javascript" src="jquery/jquery-2.2.1.min.js" ></script>
+        <script type="tex/javascript" src="bootstrap/js/bootstrap.min.js" ></script>
+        <link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+        <link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css"/>
+        <title>Awesome's Libraries</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="page-header">AWESOME'S LIBRARIES</h1>
+            <small>Gestión de la compra</small>
+            <div class="jumbotron">
+                <form method="post" action="ProcesoCarrito">
+                    <table class="table table-bordered table-hover table-responsive">
+                        <tr>
+                            <th>*</th>
+                            <th>Título</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="form-control" value="0" name='seleccion'/>
+                            </td>
+                            <td>
+                                <label>Canción de fuego y hielo: Juego de tronos</label>
+                                <input type="hidden" value="Canción de fuego y hielo: Juego de tronos" hidden name="titulo" />
+                            </td>
+                            <td>
+                                <input type="number" class="form-control" readonly value="39.95" name="precio"/>
+                            </td>
+                            <td>
+                                <input type="number" class="form-control" value="1" name="cantidad" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="form-control" value="1" name='seleccion'/>
+                            </td>
+                            <td>
+                                <label>Así habló Zaratustra</label>
+                                <input type="hidden" value="Así habló Zaratustra" hidden name="titulo" />
+                            </td>
+                            <td>
+                                <input type="number" class="form-control" readonly value="29.95" name="precio"/>
+                            </td>
+                            <td>
+                                <input type="number" class="form-control" value="1" name="cantidad" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="form-control" value="2" name='seleccion'/>
+                            </td>
+                            <td>
+                                <label>El nombre del viento</label>
+                                <input type="hidden" value="El nombre del viento" hidden name="titulo" />
+                            </td>
+                            <td>
+                                <input type="number" class="form-control" readonly value="33.95" name="precio"/>
+                            </td>
+                            <td>
+                                <input type="number" class="form-control" value="1" name="cantidad" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <input type="submit" value="Añadir al carrito" class="btn btn-primary" />
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
