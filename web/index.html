@@ -6,8 +6,10 @@ and open the template in the editor.
 -->
 <html>
     <head lang="es">
-        <script type="tex/javascript" src="jquery/jquery-2.2.1.min.js" ></script>
-        <script type="tex/javascript" src="bootstrap/js/bootstrap.min.js" ></script>
+        <script type="application/javascript" src="jquery/jquery-2.2.1.min.js" ></script>
+        <script type="application/javascript" src="scripts/jquery.validate.min.js" ></script>
+        <script type="text/javascript" src="scripts/validacion.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js" ></script>
         <link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
         <link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css"/>
         <title>Awesome's Libraries</title>
@@ -16,67 +18,76 @@ and open the template in the editor.
     </head>
     <body>
         <div class="container">
-            <h1 class="page-header">AWESOME'S LIBRARIES</h1>
-            <small>Gestión de la compra</small>
+            <div class="page-header">
+                <h1><span class='glyphicon glyphicon-book'></span>AWESOME'S LIBRARIES</h1>
+                <small>Gestión de la compra</small>
+            </div>
             <div class="jumbotron">
-                <form method="post" action="ProcesoCarrito">
+                <h2>Articulos</h2>
+                <form method="post" id="formGestion" action="ProcesoCarrito">
                     <table class="table table-bordered table-hover table-responsive">
-                        <tr>
-                            <th>*</th>
-                            <th>Título</th>
-                            <th>Precio</th>
-                            <th>Cantidad</th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" class="form-control" value="0" name='seleccion'/>
-                            </td>
-                            <td>
-                                <label>Canción de fuego y hielo: Juego de tronos</label>
-                                <input type="hidden" value="Canción de fuego y hielo: Juego de tronos" hidden name="titulo" />
-                            </td>
-                            <td>
-                                <input type="number" class="form-control" readonly value="39.95" name="precio"/>
-                            </td>
-                            <td>
-                                <input type="number" class="form-control" value="1" name="cantidad" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" class="form-control" value="1" name='seleccion'/>
-                            </td>
-                            <td>
-                                <label>Así habló Zaratustra</label>
-                                <input type="hidden" value="Así habló Zaratustra" hidden name="titulo" />
-                            </td>
-                            <td>
-                                <input type="number" class="form-control" readonly value="29.95" name="precio"/>
-                            </td>
-                            <td>
-                                <input type="number" class="form-control" value="1" name="cantidad" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="checkbox" class="form-control" value="2" name='seleccion'/>
-                            </td>
-                            <td>
-                                <label>El nombre del viento</label>
-                                <input type="hidden" value="El nombre del viento" hidden name="titulo" />
-                            </td>
-                            <td>
-                                <input type="number" class="form-control" readonly value="33.95" name="precio"/>
-                            </td>
-                            <td>
-                                <input type="number" class="form-control" value="1" name="cantidad" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="4">
-                                <input type="submit" value="Añadir al carrito" class="btn btn-primary" />
-                            </td>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th>*</th>
+                                <th>Título</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="0" name='seleccion'/>
+                                </td>
+                                <td>
+                                    <label>Canción de fuego y hielo: Juego de tronos</label>
+                                    <input type="hidden" value="Canción de fuego y hielo: Juego de tronos" hidden name="titulo" />
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control" readonly value="39.95" name="precio"/>
+                                </td>
+                                <td>
+                                    <input type="number" id="cantidad1" class="form-control" value="1" name="cantidad" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="1" name='seleccion'/>
+                                </td>
+                                <td>
+                                    <label>Así habló Zaratustra</label>
+                                    <input type="hidden" value="Así habló Zaratustra" hidden name="titulo" />
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control" readonly value="29.95" name="precio"/>
+                                </td>
+                                <td>
+                                    <input type="number" id="cantidad2" class="form-control" value="1" name="cantidad" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" value="2" name='seleccion'/>
+                                </td>
+                                <td>
+                                    <label>El nombre del viento</label>
+                                    <input type="hidden" value="El nombre del viento" hidden name="titulo" />
+                                </td>
+                                <td>
+                                    <input type="number" class="form-control" readonly value="33.95" name="precio"/>
+                                </td>
+                                <td>
+                                    <input type="number" id="cantidad3" class="form-control" value="1" name="cantidad" />
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4">
+                                    <input type="submit" id="submitGestion" value="Añadir al carrito" class="btn btn-primary" />
+                                </td>
+                            </tr>
+                        </tfoot>
                     </table>
                 </form>
             </div>
