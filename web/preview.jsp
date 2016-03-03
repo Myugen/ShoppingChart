@@ -45,7 +45,7 @@
                 <%
                     } else {
                 %>
-                <form action="facture.jsp" method="post">
+                <form action="facture.jsp" method="post" accept-charset="UTF-8">
                 <table class="table table-bordered table-responsive table-hover">
                     <thead>
                         <tr>

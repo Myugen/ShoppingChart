@@ -36,6 +36,7 @@ public class ProcesoCarrito extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            request.setCharacterEncoding("UTF-8");
             ArrayList<Libro> libros = new ArrayList();
             String[] checkboxes = request.getParameterValues("seleccion");
             String[] titulos = request.getParameterValues("titulo");
@@ -47,7 +48,7 @@ public class ProcesoCarrito extends HttpServlet {
                     int indice = Integer.parseInt(checkboxes[i]);
                     float precio = Float.parseFloat(precios[indice]);
                     int cantidad = Integer.parseInt(cantidades[indice]);
-                    String titulo = decode(titulos[indice], "UTF-8");
+                    String titulo = titulos[indice];
                     Libro l = new Libro(indice, titulo, precio, cantidad);
                     libros.add(l);
                 }
